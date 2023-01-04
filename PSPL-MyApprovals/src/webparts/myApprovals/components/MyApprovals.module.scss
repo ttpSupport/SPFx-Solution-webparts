@@ -1,0 +1,59 @@
+@import '~office-ui-fabric-react/dist/sass/References.scss';
+
+.root {
+  width: 100%;
+  .large {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+    .count {
+      display: grid;
+      gap: 0.25rem;
+      width: 4rem;
+      text-align: center;
+    }
+    .items {
+      display: block;
+      overflow-x: auto;
+      margin-top: -1rem;
+    }
+  }
+  .small {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+    .count {
+      display: grid;
+      gap: 0.25rem;
+      text-align: center;
+    }
+    .items {
+      display: none;
+    }
+  }
+  .loading {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    align-items: center;
+    justify-content: center;
+  }
+  .superLargenew{
+    font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: 42px;
+    font-weight: 600;
+    display: inline;
+  }
+  .mediumnew{
+    font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: 14px;
+    font-weight: 400;
+     display: block !important;
+  }
+  
+}
+
