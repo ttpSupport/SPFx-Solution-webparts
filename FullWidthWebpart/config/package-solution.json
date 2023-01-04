@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "full-width-webpart-client-side-solution",
+    "id": "3f334ad6-5f97-4391-b9f7-9daf44307c19",
+    "version": "1.0.0.2",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.14.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "FullWidthWebpart description"
+      },
+      "longDescription": {
+        "default": "FullWidthWebpart description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "full-width-webpart Feature",
+        "description": "The feature that activates elements of the full-width-webpart solution.",
+        "id": "4fece40d-115e-421c-8557-5a579e9cf414",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/full-width-webpart.sppkg"
+  }
+}

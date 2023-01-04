@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "OneFEO-How-To-react-tiles-client-side-solution",
+    "id": "13D978AB-082E-4553-AD92-2B0ECBFEC11B",
+    "version": "3.0.0.4",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true
+  },
+  "paths": {
+    "zippedPackage": "solution/OneFEO_How_To.sppkg"
+  }
+}
