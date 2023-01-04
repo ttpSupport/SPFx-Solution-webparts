@@ -1,0 +1,33 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
+  "id": "b59daaf5-29e7-4f6b-adbf-fc45242aca39",
+  "alias": "OneFeoHightlightsWebPart",
+  "componentType": "WebPart",
+
+  "version": "*",
+  "manifestVersion": 2,
+
+
+  "requiresCustomScript": true,
+  "supportedHosts": ["SharePointWebPart", "TeamsPersonalApp", "TeamsTab", "SharePointFullPage"],
+  "supportsThemeVariants": true,
+
+  "preconfiguredEntries": [{
+    "groupId": "5c03119e-3074-46fd-976b-c60198311f70", 
+    "group": { "default": "Other" },
+    "title": { "default": "oneFeo-hightlights" },
+    "description": { "default": "oneFeo-hightlights description" },
+    "officeFabricIconFontName": "Page",
+    "properties": {
+      "description": "oneFeo-hightlights",
+      "title": "Highlights",
+      "editorSection": [
+        { "Title": "editor-0", "Content": ""},
+        { "Title": "editor-1", "Content": ""},
+        { "Title": "editor-2", "Content": ""},
+        { "Title": "editor-3", "Content": ""},
+        { "Title": "editor-4", "Content": ""}
+      ]
+    }
+  }]
+}
