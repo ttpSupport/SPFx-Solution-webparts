@@ -1,0 +1,23 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
+  "id": "1af3a3c5-d0ea-4301-9866-8b7bf241e898",
+  "alias": "TilesWebPart",
+  "componentType": "WebPart",
+
+  "version": "*",
+  "manifestVersion": 2,
+
+  
+  "requiresCustomScript": true,
+
+  "preconfiguredEntries": [{
+    "groupId": "e8d6aa1a-5e82-4678-abf4-bb4c4bdd3be3", 
+    "group": { "default": "Other" },
+    "title": { "default": "Contacts" },
+    "description": { "default": "Lists links in tile format" },
+    "officeFabricIconFontName": "Tiles",
+    "properties": {
+      "title": "FEOrchard Contacts"
+    }
+  }]
+}

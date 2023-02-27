@@ -1,0 +1,68 @@
+site_name: PnP Modern Search (v4)
+site_url: 'http://127.0.0.1:8000/'
+use_directory_urls: true
+nav:
+  - Getting Started:
+    - Introduction: index.md
+    - Installation: installation.md
+    - Scenario tutorials: scenarios/index.md
+    - How to contribute?: how-to-contribute.md 
+    - Building documentation: build-the-doc.md
+  - Search Results:
+    - Usage: usage/search-results/index.md
+    - Data sources: usage/search-results/data-sources/index.md
+    - Slots: usage/search-results/slots.md
+    - Tokens: usage/search-results/tokens.md
+    - Layouts: usage/search-results/layouts/index.md
+    - Connections: usage/search-results/connections/index.md
+    - Extensibility: extensibility/index.md
+  - Search Filters:
+    - Usage: usage/search-filters/index.md
+    - Layouts: usage/search-filters/layouts/index.md
+  - Search Verticals:
+    - Usage: usage/search-verticals/index.md 
+  - Search Box:
+    - Usage: usage/search-box/index.md
+  - Extensibility:
+    - Introduction: extensibility/index.md
+    - Templating: extensibility/templating.md
+    - Custom layout: extensibility/custom_layout.md
+    - Custom web component: extensibility/custom_web_component.md
+    - Custom suggestions provider: extensibility/custom_suggestions_provider.md
+    - Custom Handlebars customizations: extensibility/handlebars_customizations.md
+  - Version 3:
+    - Documentation: v3/index.md
+theme:
+  name: 'material'
+  features:
+    - navigation.tabs
+    - instant
+  font:
+    code: 'Ubuntu Mono'
+  logo: 'assets/pnp_logo.png'
+  icon:
+    logo: material/cloud
+extra_css:
+  - 'assets/extra.css'
+markdown_extensions:
+  - attr_list
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - markdown_include.include:
+          base_path: docs
+extra:
+  social:
+    - icon: fontawesome/brands/twitter
+      link: 'https://twitter.com/m365pnp'
+    - icon: fontawesome/brands/twitter
+      link: 'https://microsoft-search.github.io/pnp-modern-search/'
+repo_url: https://github.com/microsoft-search/pnp-modern-search/
+edit_uri: blob/develop/docs

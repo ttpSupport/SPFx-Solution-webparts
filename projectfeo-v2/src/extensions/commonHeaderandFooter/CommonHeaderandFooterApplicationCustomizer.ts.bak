@@ -1,0 +1,152 @@
+import { Log } from '@microsoft/sp-core-library';
+import {
+  BaseApplicationCustomizer,
+  PlaceholderContent,
+  PlaceholderName
+} from '@microsoft/sp-application-base';
+import * as React from "react";
+import * as ReactDom from 'react-dom';
+import { Dialog } from '@microsoft/sp-dialog';
+import 'jquery';
+require('bootstrap');
+import { SPComponentLoader } from '@microsoft/sp-loader';
+
+import * as strings from 'CommonHeaderandFooterApplicationCustomizerStrings';
+import SiteBreadcrumb from './components/SiteBreadcrumb';
+import { ISiteBreadcrumbProps } from './components/ISiteBreadcrumb';
+const LOG_SOURCE: string = 'CommonHeaderandFooterApplicationCustomizer';
+
+import HeaderFooterDataService from './services/HeaderFooterDataService';
+import IHeaderFooterData from './model/IHeaderFooterData';
+import ComponentManager from './components/ComponentManager';
+
+let cssURL = "https://vzq2f.sharepoint.com/sites/Demo-TeamSite/SiteAssets/css/bootstrap.css";
+SPComponentLoader.loadCss(cssURL);
+let cssURL1 = "https://vzq2f.sharepoint.com/sites/Demo-TeamSite/SiteAssets/css/style.css";
+SPComponentLoader.loadCss(cssURL1);
+let cssURL2 = "https://vzq2f.sharepoint.com/sites/Demo-TeamSite/SiteAssets/css/header.css";
+SPComponentLoader.loadCss(cssURL2);
+
+let cssURL3= "https://vzq2f.sharepoint.com/sites/Demo-TeamSite/SiteAssets/css/footer.css";
+SPComponentLoader.loadCss(cssURL3);
+
+let cssURL4= "https://vzq2f.sharepoint.com/sites/Demo-TeamSite/SiteAssets/css/fontawsome.css";
+SPComponentLoader.loadCss(cssURL4);
+
+let cssURL5= "https://vzq2f.sharepoint.com/sites/Demo-TeamSite/SiteAssets/css/root.css";
+SPComponentLoader.loadCss(cssURL5);
+
+
+/**
+ * If your command set uses the ClientSideComponentProperties JSON input,
+ * it will be deserialized into the BaseExtension.properties object.
+ * You can define an interface to describe it.
+ */
+export interface ICommonHeaderandFooterApplicationCustomizerProperties {
+  // This is an example; replace with your own property
+  testMessage: string;
+}
+
+/** A Custom Action which can be run during execution of a Client Side Application */
+export default class CommonHeaderandFooterApplicationCustomizer
+  extends BaseApplicationCustomizer<ICommonHeaderandFooterApplicationCustomizerProperties> {
+    private _headerPlaceholder: PlaceholderContent;
+
+    
+  public onInit(): Promise<void> {
+    Log.info(LOG_SOURCE, `Initialized ${strings.Title}`);
+
+    let message: string = this.properties.testMessage;
+    if (!message) {
+      message = '(No properties were provided.)';
+    }
+
+    Dialog.alert(`Hello from ${strings.Title}:\n\n${message}`);
+
+
+
+    this.context.placeholderProvider.changedEvent.add(this, this.bootstrap);
+
+    // Call render method for generating the needed html elements
+    //this.bootstrap();
+ //this._renderPlaceHolders();
+
+
+    return Promise.resolve();
+  }
+
+  private bootstrap(): void {
+    
+    // For now this is hard-coded
+    // -- UPLOAD JSON WITH MENU CONTENTS AND PUT THE URL HERE --
+   // const url = './sample//HeaderFooterData.json.txt';
+   const url = 'https://vzq2f.sharepoint.com/sites/Demo-TeamSite/SiteAssets/HeaderFooterData.json.txt';
+    // Read JSON containing the header and footer data
+      HeaderFooterDataService.get(url)
+        .then ((data: IHeaderFooterData) => {
+
+          // Get the elements from SPFx
+          const header: PlaceholderContent = this.context.placeholderProvider.tryCreateContent(
+            PlaceholderName.Top,
+            { onDispose : this._onDispose }
+          );
+          const footer: PlaceholderContent = this.context.placeholderProvider.tryCreateContent(
+            PlaceholderName.Bottom,
+            { onDispose : this._onDispose }
+          );
+
+          if (header || footer) {
+            // If we have at least one placeholder, render into it
+            ComponentManager.render(header ? header.domElement : null,
+              footer ? footer.domElement : null, data);
+          }
+          if(this.context.pageContext.legacyPageContext["isWebWelcomePage"] == "true" ){
+            console.log("inside 1");
+            //this._renderPlaceHolders(); 
+          }
+         this._renderPlaceHolders();
+          console.log(this.context.pageContext.legacyPageContext["isWebWelcomePage"])
+          
+
+        })
+        .catch ((error: string) => {
+          console.log(`Error in CustomHeaderFooterApplicationCustomizer: ${error}`);
+        });
+  
+    return;
+  }
+
+
+  private _renderPlaceHolders(): void {
+    
+    // Check if the header placeholder is already set and if the header placeholder is available
+    if (!this._headerPlaceholder && this.context.placeholderProvider.placeholderNames.indexOf(PlaceholderName.Top) !== -1) {
+      this._headerPlaceholder = this.context.placeholderProvider.tryCreateContent(PlaceholderName.Top, {
+        onDispose: this._onDispose
+      });
+    
+      // The extension should not assume that the expected placeholder is available.
+      if (!this._headerPlaceholder) {
+        console.error('The expected placeholder (PageHeader) was not found.');
+        return;
+      }
+     
+      if (this._headerPlaceholder.domElement) {
+       
+        const element: React.ReactElement<ISiteBreadcrumbProps> = React.createElement(
+          SiteBreadcrumb,
+          {
+            context: this.context
+          }
+        );
+        ReactDom.render(element, this._headerPlaceholder.domElement);
+      }
+    }
+  }
+
+  private _onDispose(): void {
+    console.log('[Breadcrumb._onDispose] Disposed breadcrumb.');
+  }
+
+
+}

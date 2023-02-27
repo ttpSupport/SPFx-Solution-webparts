@@ -1,0 +1,30 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/core-build/serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://ttponline.sharepoint.com/sites/FEO/SitePages/Organisation-Structure.aspx",
+      "customActions": {
+        "86eddd3a-8fe7-4ff9-a67c-63f42b6ca3f3": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "testMessage": "Test message"
+          }
+        }
+      }
+    },
+    "commonHeaderandFooter": {
+      "pageUrl": "https://ttponline.sharepoint.com/sites/FEO/SitePages/Organisation-Structure.aspx",
+      "customActions": {
+        "86eddd3a-8fe7-4ff9-a67c-63f42b6ca3f3": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "testMessage": "Test message"
+          }
+        }
+      }
+    }
+  },
+  "initialPage": "https://enter-your-SharePoint-site/_layouts/workbench.aspx"
+}

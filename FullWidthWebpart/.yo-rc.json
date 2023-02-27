@@ -1,0 +1,16 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": false,
+    "version": "1.14.0",
+    "libraryName": "full-width-webpart",
+    "libraryId": "3f334ad6-5f97-4391-b9f7-9daf44307c19",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "FullWidthWebpart",
+    "solutionShortDescription": "FullWidthWebpart description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

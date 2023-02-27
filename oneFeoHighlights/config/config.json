@@ -1,0 +1,19 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "one-feo-hightlights-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/oneFeoHightlights/OneFeoHightlightsWebPart.js",
+          "manifest": "./src/webparts/oneFeoHightlights/OneFeoHightlightsWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "OneFeoHightlightsWebPartStrings": "lib/webparts/oneFeoHightlights/loc/{locale}.js",
+    "ControlStrings": "node_modules/@pnp/spfx-controls-react/lib/loc/{locale}.js"
+  }
+}

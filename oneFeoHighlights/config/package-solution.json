@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "one-feo-highlights-client-side-solution",
+    "id": "841ea77d-c9a0-4b66-9ace-777b40727f65",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.14.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "oneFEO-highlights description"
+      },
+      "longDescription": {
+        "default": "oneFEO-highlights description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "one-feo-highlights Feature",
+        "description": "The feature that activates elements of the one-feo-highlights solution.",
+        "id": "40f49b33-a722-49aa-8d08-96ad6b0d3c84",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/one-feo-highlights.sppkg"
+  }
+}

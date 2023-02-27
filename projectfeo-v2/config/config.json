@@ -1,0 +1,53 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "common-headerand-footer-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/commonHeaderandFooter/CommonHeaderandFooterApplicationCustomizer.js",
+          "manifest": "./src/extensions/commonHeaderandFooter/CommonHeaderandFooterApplicationCustomizer.manifest.json"
+        }
+      ]
+    },
+    "current-nav-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/currentNav/CurrentNavWebPart.js",
+          "manifest": "./src/webparts/currentNav/CurrentNavWebPart.manifest.json"
+        }
+      ]
+    },
+    "right-section-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/rightSection/RightSectionWebPart.js",
+          "manifest": "./src/webparts/rightSection/RightSectionWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {
+    "jquery": {
+      "path": "https://ttponline.sharepoint.com/sites/FEO1/Style Library/FEO1/js/jquery.min.js",
+      "globalName": "jquery"
+    },
+    "browser": {
+      "path": "https://ttponline.sharepoint.com/sites/FEO1/Style%20Library/FEO1/js/browser.js",
+      "globalName": "browser"
+    },
+    "react": {
+      "path": "https://ttponline.sharepoint.com/sites/FEO1/Style%20Library/FEO1/js/react.js",
+      "globalName": "react"
+    },
+    "reactDom": {
+      "path": "https://ttponline.sharepoint.com/sites/FEO1/Style%20Library/FEO1/js/react-dom.js",
+      "globalName": "reactDom"
+    }
+  },
+  "localizedResources": {
+    "CommonHeaderandFooterApplicationCustomizerStrings": "lib/extensions/commonHeaderandFooter/loc/{locale}.js",
+    "CurrentNavWebPartStrings": "lib/webparts/currentNav/loc/{locale}.js",
+    "RightSectionWebPartStrings": "lib/webparts/rightSection/loc/{locale}.js"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "onefeo-contacts-client-side-solution",
+    "id": "2b774aea-a94e-4b3e-8728-975dc42a0d04",
+    "version": "2.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true
+  },
+  "paths": {
+    "zippedPackage": "solution/one-feo-contacts.sppkg"
+  }
+}

@@ -1,0 +1,48 @@
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+
+import ILink from '../model/ILink';
+
+export interface IHeaderProps {
+	links: ILink[];
+}
+
+export class Header extends React.Component<IHeaderProps, {}> {
+
+	constructor(props: IHeaderProps) {
+		super(props);
+	}
+
+	public render(): JSX.Element {
+		return (
+			<div className="main-menu-bg">
+				<div className="container">
+					<div className="main-menu">
+						<div className="main-menu-left">
+							<a href="#" className="logo wht-link">OneFEO | Group HR</a>
+						</div>
+						<div className="main-menu-right">
+							{this.props.links.map(l => (
+								<div className="menu-item">
+									<a href={l.url} className={l.children.length > 0 ? "menu-item-link wht-link mr-30" : "menu-item-link no-dropdown wht-link  mr-30"}>{l.name}</a>
+									{l.children.length > 0 &&
+										<div className="menu-item-dropdown">
+											<ul>
+												{l.children.map(m => (
+													<li>
+														<a href={m.url} className="item-dropdown-link">{m.name}</a>
+														<hr className="item-dropdown-divider" />
+													</li>
+												))}
+											</ul>
+										</div>
+									}
+								</div>
+							))}
+						</div>
+					</div>
+				</div>
+			</div>
+		);
+	}
+}

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # PnP Modern Search Solution
 
 This is a open source solution that helps you to build engaging search based solutions in the SharePoint modern experience.
@@ -27,3 +28,6 @@ contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additio
 ## Disclaimer
 
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
+=======
+# SPFx-Solution-webparts
+>>>>>>> 17a74b58586e425765356b40dc025e4cc906e15f

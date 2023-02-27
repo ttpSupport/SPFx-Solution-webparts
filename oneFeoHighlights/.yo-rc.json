@@ -1,0 +1,16 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.14.0",
+    "libraryName": "one-feo-highlights",
+    "libraryId": "841ea77d-c9a0-4b66-9ace-777b40727f65",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "oneFEO-highlights",
+    "solutionShortDescription": "oneFEO-highlights description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}
